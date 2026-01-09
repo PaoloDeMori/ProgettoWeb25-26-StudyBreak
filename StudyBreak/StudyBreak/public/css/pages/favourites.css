@@ -1,0 +1,10 @@
+@import "../base.css";
+@import "../components/header.css";
+@import "../components/navbar.css";
+@import "../components/h2.css";
+@import "../components/card.css";
+
+main {
+    margin-top: var(--header-footer-size);
+    margin-bottom: calc(var(--header-footer-size) + 20px);
+}

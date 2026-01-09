@@ -1,0 +1,67 @@
+main > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 20px 20px;
+}
+
+/*search bar*/
+main > header form {
+    display: none;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+main > header form input {
+    position: relative;
+    flex: 1;
+}
+
+main > header form>label {
+    display:none;
+}
+
+/*exit icon*/
+main > header form button {
+    position: absolute;
+    right: 15px;
+    top: calc(50%+15px);
+    transform: translateY(-50%);
+    z-index: 10;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+main > header form button img {
+    display: block;
+}
+
+/*stato iniziale*/
+main > header > button,
+main > header > a{
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+main > header button[aria-current="page"],
+main > header > a[aria-current="page"] {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #744236FF;
+}
+
+main > header button[aria-current="page"] img,
+main > header > a[aria-current="page"] img {
+    filter: brightness(0) invert(1);
+}

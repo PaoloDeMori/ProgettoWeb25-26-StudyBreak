@@ -1,0 +1,105 @@
+@import "../base.css";
+@import "../components/button.css";
+@import "../components/entry.css";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
+header,
+footer {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+header h1 {
+  font-size: var(--font-size-title-large);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+
+label {
+  align-self: flex-start;
+}
+
+fieldset {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 298px;
+}
+
+input {
+  min-width: 298px;
+}
+
+div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 0;
+}
+
+label {
+  display: block;
+}
+
+form fieldset {
+  position: relative;
+}
+
+div button[type="button"] {
+  position: absolute;
+  right: 10px;
+  top: 50% + 15px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+div button[type="button"] img {
+  display: block;
+}
+
+/*go back button*/
+footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 194px;
+  height: 45px;
+
+  border: none;
+  border-radius: var(--radius-btn);
+
+  font-family: var(--font-base);
+  font-size: var(--font-size-btn);
+  text-decoration: none;
+  line-height: var(--line-height-base);
+
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+
+  cursor: pointer;
+}
+
+footer a:active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  transform: scale(0.98);
+}

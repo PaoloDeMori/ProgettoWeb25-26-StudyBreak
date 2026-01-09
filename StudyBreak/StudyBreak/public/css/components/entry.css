@@ -1,0 +1,43 @@
+main form fieldset {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--color-bg);
+    font-family: var(--font-base);
+    position: relative;
+}
+
+main form legend {
+    display: none;
+}
+
+main form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: left;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+input {
+    display: inline-block;
+    height: 45px;
+    margin-bottom: 15px;
+    text-indent: 20px;
+    font-family: var(--font-base);
+    padding: 0;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-entries);
+    box-shadow: 0px 4px 4px rgba(116, 66, 54, 0.25);
+}
+
+input::placeholder {
+    color: var(--color-placeholder);
+    opacity: 1;
+}
+
+input:focus {
+    outline: none;
+}

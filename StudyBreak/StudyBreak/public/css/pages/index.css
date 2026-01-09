@@ -1,0 +1,46 @@
+@import "../base.css";
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+main section {
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 194px;
+  height: 45px;
+
+  border: none;
+  border-radius: var(--radius-btn);
+
+  font-family: var(--font-base);
+  font-size: var(--font-size-btn);
+  text-decoration: none;
+  line-height: var(--line-height-base);
+
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+
+  cursor: pointer;
+}
+
+footer a:active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  transform: scale(0.98);
+}

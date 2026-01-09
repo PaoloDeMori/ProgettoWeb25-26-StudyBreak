@@ -1,0 +1,114 @@
+@import "../base.css";
+@import "../components/header.css";
+@import "../components/button.css";
+
+input[type="checkbox"],
+legend,
+main label  {
+    display: none;
+}
+
+section > header h2 {
+text-align: center;
+    margin: 14px;
+    padding: 0 20px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--header-footer-size);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+section>header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 20px;
+    gap: 30px;
+}
+
+section > header button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-text);
+    border: none;
+}
+
+section > header a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header button{
+    cursor: pointer;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 0;
+    display: block;
+}
+
+dl {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1.275rem;
+    text-transform: uppercase;
+}

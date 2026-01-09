@@ -1,0 +1,151 @@
+@import "../base.css";
+@import "../components/header.css";
+@import "../components/button.css";
+
+h2,
+input[type="checkbox"],
+legend,
+main form label  {
+    display: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--header-footer-size);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+section>header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 20px;
+    gap: 30px;
+}
+
+section > header button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-text);
+    border: none;
+}
+
+form>input {
+    display: inline-block;
+    min-width: 298px;
+    height: 45px;
+    text-indent: 20px;
+    font-family: var(--font-base);
+    padding: 0;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-entries);
+    box-shadow: 0px 4px 4px rgba(116, 66, 54, 0.25);
+}
+
+form>input::placeholder {
+    font-size: 1rem;
+    color: var(--color-placeholder);
+    opacity: 1;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+
+    border-bottom: 1px solid var(--color-placeholder);
+}
+
+input[type="checkbox"]+label span:first-of-type {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 4px;
+    border: 1px solid var(--color-placeholder);
+    cursor: pointer;
+}
+
+input[type="checkbox"]+label span:first-of-type img {
+    opacity: 0;
+    vertical-align: middle;
+    height: auto;
+}
+
+input[type="checkbox"]:checked+label>span:first-of-type img {
+    opacity: 1;
+}
+
+label span:nth-child(2) {
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+label span:last-child {
+    margin-left: auto;
+}
+
+dl {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1.275rem;
+    text-transform: uppercase;
+}
+
+form button {
+    align-self: center;
+}

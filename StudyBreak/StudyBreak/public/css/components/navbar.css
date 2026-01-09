@@ -1,0 +1,40 @@
+body>nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: var(--header-footer-size);
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-text);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body>nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body>nav a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+body>nav a[aria-current="page"] {
+    background-color: var(--color-text);
+}
+
+body>nav a[aria-current="page"] img {
+    filter: brightness(0) invert(1);
+}
