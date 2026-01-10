@@ -61,45 +61,50 @@
     }
 
     function login_check_on_different_pages(){
-        global $dbh;
-        if(isset($_SESSION['username'], $_SESSION['password_and_browser'], $_SESSION['role'])) {
-            $session_username=$_SESSION['username'];
-            $session_password_and_browser=$_SESSION['password_and_browser'];
-            $user_browser = $_SERVER['HTTP_USER_AGENT'];
-            $session_role = $_SESSION['role'];
+    global $dbh;
+    if(isset($_SESSION['username'], $_SESSION['password_and_browser'], $_SESSION['role'])) {
+        $session_username = $_SESSION['username'];
+        $session_password_and_browser = $_SESSION['password_and_browser'];
+        $user_browser = $_SERVER['HTTP_USER_AGENT'];
+        $session_role = $_SESSION['role'];
 
-            $arrayAssocUser = $dbh->get_user_info($session_username);
-            if($arrayAssocUser === null){
-                return false;
-            }
-            $arrayUser = $arrayAssocUser[0];
-            if(count($arrayUser)===0){
-                return false;
-            }
-
-            if(isCliente($arrayUser)){
-                 if($session_role != CLIENTE_ROLE_VALUE){ return false;}
-            }
-            elseif(isVenditore($arrayUser)){
-                if ($session_role != VENDITORE_ROLE_VALUE){ 
-                    return false;
-                }
-            }
-            else{
-                return false;
-            }
-
-            $hashed_dbpassword_and_browser=hash(HASH_ALGORITHM,$arrayUser['Password'].$user_browser);
-            if($hashed_dbpassword_and_browser===$session_password_and_browser){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        else{
+        $user = $dbh->get_user_info($session_username);
+        
+        if($user === null){
             return false;
         }
+
+        if($user->ruolo == 'cliente' && $session_role != CLIENTE_ROLE_VALUE){
+            return false;
+        }
+        if($user->ruolo == 'venditore' && $session_role != VENDITORE_ROLE_VALUE){
+            return false;
+        }
+
+        $db_password = $user->password; 
+        
+        $hashed_dbpassword_and_browser = hash(HASH_ALGORITHM, $db_password . $user_browser);
+        
+        if($hashed_dbpassword_and_browser === $session_password_and_browser){
+            return true;
+        }
+        }
+    return false;
+    }
+
+    function check_role_access() {
+    $current_uri = $_SERVER['REQUEST_URI'];
+    
+    $session_role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+
+    if ($session_role == VENDITORE_ROLE_VALUE && strpos($current_uri, '/public/user/') !== false) {
+        die("non hai accesso a questa pagina");
+    }
+
+    if ($session_role == CLIENTE_ROLE_VALUE && strpos($current_uri, '/public/admin/') !== false) {
+        header("Location: " . $GLOBALS['default_directory'] . "public/user/homepage.php");
+        die("non hai accesso a questa pagina");
+    }
     }
 
     function register($username, $password, $email, $confirm_password){

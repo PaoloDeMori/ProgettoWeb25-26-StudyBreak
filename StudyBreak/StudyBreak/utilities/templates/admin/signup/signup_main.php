@@ -10,7 +10,7 @@
                 <div>
                     <input id="password" type="password" name="password" placeholder="Enter your password"
                         autocomplete="new-password" required />
-                    <button type="button"><img src="../../img/icons/hashed.svg" alt="show password" /></button>
+                    <button type="button" class="toggle-password"><img src="../../img/icons/hashed.svg" alt="show password" /></button>
                 </div>
                 <br />
 
@@ -18,7 +18,7 @@
                 <div>
                     <input id="confirm" type="password" name="confirm" placeholder="Confirm your password"
                         autocomplete="new-password" required />
-                    <button type="button"><img src="../../img/icons/hashed.svg" alt="show password" /></button>
+                    <button type="button" class="toggle-password"><img src="../../img/icons/hashed.svg" alt="show password" /></button>
                 </div>
                 <?php 
                     if(isset($_SESSION['confirm_password_error']) && $_SESSION['confirm_password_error']==true){

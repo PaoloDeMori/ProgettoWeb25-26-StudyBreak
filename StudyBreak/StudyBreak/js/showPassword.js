@@ -1,17 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const passwordInput = document.getElementById("password");
-    const toggleBtn = document.getElementById("toggle-password");
-    const toggleIcon = toggleBtn.querySelector("img");
+    const toggleButtons = document.querySelectorAll(".toggle-password");
 
-    toggleBtn.addEventListener("click", () => {
-        const isPassword = passwordInput.type === "password";
+    toggleButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const passwordInput = btn.parentElement.querySelector("input");
+            const toggleIcon = btn.querySelector("img");
 
-        passwordInput.type = isPassword ? "text" : "password";
+            const isPassword = passwordInput.type === "password";
 
-        toggleIcon.src = isPassword
-            ? "../public/img/icons/show.svg"
-            : "../public/img/icons/hashed.svg";
+            passwordInput.type = isPassword ? "text" : "password";
 
-        toggleIcon.alt = isPassword ? "hide password" : "show password";
+            toggleIcon.src = isPassword
+                ? "/StudyBreak/StudyBreak/img/icons/show.svg"
+                : "/StudyBreak/StudyBreak/img/icons/hashed.svg";
+
+            toggleIcon.alt = isPassword ? "hide password" : "show password";
+        });
     });
 });

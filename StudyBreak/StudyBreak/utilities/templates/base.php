@@ -51,6 +51,16 @@
     }
     ?>
 
+    <?php
+    if (isset($templateAuthJs)) {
+        foreach ($templateAuthJs as $jsFileName) {
+            echo '<script src="../js/' . $jsFileName . '"></script>';
+        }
+    }
+    ?>
+
+    
+
 </body>
 
 </html>

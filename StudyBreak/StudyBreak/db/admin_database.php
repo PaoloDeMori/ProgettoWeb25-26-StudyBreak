@@ -214,7 +214,30 @@ class AdminDatabaseHelper
         return $bevande;
     }
 
-    public function get_orders_last_month()
+    public function insertBevanda(BevandaDTO $bevanda, int $idVenditore): bool
+    {
+        $query = "
+            INSERT INTO BEVANDA (nome, prezzo, foto, disponibilita, ID_Venditore)
+            VALUES (?, ?, ?, ?, ?)
+        ";
+
+        if (!$stmt = $this->db->prepare($query)) {
+            return false;
+        }
+
+        $stmt->bind_param(
+            "sdsii",
+            $bevanda->nome,
+            $bevanda->prezzo,
+            $bevanda->foto,
+            $bevanda->disponibilita,
+            $idVenditore
+        );
+
+        return $stmt->execute();
+    }
+
+        public function get_orders_last_month()
     {
         $query = "SELECT COUNT(ID_ordine) AS totale
                   FROM ORDINE

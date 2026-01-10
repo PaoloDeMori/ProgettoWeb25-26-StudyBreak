@@ -9,7 +9,6 @@ require_once ($default_directory . "db/admin_database.php");
 require_once ($default_directory . "utilities/functions.php");
 require_once($default_directory . 'utilities/auth/auth_utilities.php');
 require_once($default_directory . 'utilities/Const.php');
-define('ROOT_PATH', __DIR__."/../");
 
 sec_session_start();
 
@@ -18,8 +17,4 @@ $cartDbh = new cartDatabaseHelper($dbh->db);
 $favouritesDbh = new favouriteDatabaseHelper($dbh->db);
 $adminDbh = new AdminDatabaseHelper($dbh->db);
 
-if(!login_check_on_different_pages()){
-    die("You dont have access!");
-}
-check_role_access();
 ?>

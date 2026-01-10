@@ -9,7 +9,7 @@
                 <div>
                     <input id="password" type="password" name="password" placeholder="Enter your password"
                         autocomplete="new-password" required />
-                    <button type="button"><img src="../img/icons/hashed.svg" alt="show password" /></button>
+                    <button type="button" class="toggle-password"><img src="../img/icons/hashed.svg" alt="show password" /></button>
                 </div>
                 <?php 
                     if(isset($_SESSION['login_status']) && $_SESSION['login_status'] === 'failed') {

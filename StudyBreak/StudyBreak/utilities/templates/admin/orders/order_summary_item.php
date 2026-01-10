@@ -30,7 +30,10 @@
                 </ul>
             </section>
             <div>
-                <a href="/StudyBreak/utilities/templates/admin/orders/toHistoryProcess.php?idordine=<?php echo $ordine->id; ?>">
+                <?php if($ordersParams["status"]=='ongoing') {
+                    echo "<a href=../../utilities/templates/admin/orders/toHistoryProcess.php?idordine=". $ordine->id.'>';
+                }
+                ?>
                     <span>to history</span>
                 </a>
             </div>

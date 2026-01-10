@@ -6,4 +6,7 @@ error_reporting(E_ALL);
 $templateParams["foglio-di-stile"] = "css/pages/auth.css";
 
 $templateParams["head-title"] = " - ".$authPagesParams['head-name'];
+
+$templateAuthJs[] = "showPassword.js";
+
 ?>

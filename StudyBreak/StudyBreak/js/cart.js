@@ -4,7 +4,13 @@ function truncate(text, max) {
 
 function generaArticoloCarrello(articolo, isCustom = false) {
     const li = document.createElement("li");
-    const prezzoTotale = parseFloat(articolo.prezzo) * articolo.quantita;
+    let prezzoTotale = 0;
+    if(!isCustom){prezzoTotale = parseFloat(articolo.prezzo) * articolo.quantita;}
+    else{
+        for (const ing of articolo.ingredients) {
+            prezzoTotale += (ing.prezzo*articolo.quantita);
+        }
+    }
 
     li.innerHTML = `
 
